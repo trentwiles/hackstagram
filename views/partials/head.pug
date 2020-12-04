@@ -1,0 +1,76 @@
+doctype html
+html(lang="en")
+    head
+
+    // Support for custom titles
+    if username
+        title #{username} - Hackstagram
+    else
+        title Hackstagram - Privacy Focused Instagram Proxy
+
+    body(onload='halfmoon.toggleDarkMode()')
+include tags.pug
+    
+    link(rel="manifest" href="pwa/manifest.webmanifest")
+    link(href='https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/css/halfmoon-variables.min.css' rel='stylesheet')
+    script(src='https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js')
+    script(src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js")
+    script(src="https://kit.fontawesome.com/281a5c53f1.js")
+    //script(src="/src/research.js")
+    script(src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.0/dist/sweetalert2.all.min.js")
+    link(href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4.0.1/dark.min.css" rel="stylesheet")
+    script(src="https://riverside.rocks/src/pwa.js")
+    meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    meta(name="HandheldFriendly" content="true")
+    <div class="page-wrapper with-navbar">
+    <nav class="navbar">
+      <div class="navbar-content">
+      </div>
+      <a href="/" class="navbar-brand">
+        Hackstagram
+      </a>
+      <ul class="navbar-nav d-none d-md-flex"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
+        <li class="nav-item">
+          <a href="/about/" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="/projects/" class="nav-link">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="/videos/" class="nav-link">Watch</a>
+        </li>
+        <li class="nav-item">
+          <a href="/app/" class="nav-link">App</a>
+        </li>
+        <li class="nav-item">
+          <a href="/account/dashboard/" class="nav-link">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="/about/contact/" class="nav-link">Contact Us</a>
+        </li>
+        <li class="nav-item">
+      <a class="nav-link" onclick="halfmoon.toggleDarkMode()">Toggle Dark Mode</a>
+    </li>
+      </ul>
+      <!-- Navbar form (inline form) -->
+      <div class="navbar-content d-md-none ml-auto"> <!-- d-md-none = display: none on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+        <div class="dropdown with-arrow">
+          <button class="btn" data-toggle="dropdown" type="button" id="navbar-dropdown-toggle-btn-1">
+            Menu
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right w-200" aria-labelledby="navbar-dropdown-toggle-btn-1"> <!-- w-200 = width: 20rem (200px) -->
+            <a href="/about/" class="dropdown-item">About</a>
+            <a href="/projects/" class="dropdown-item">Projects</a>
+            <a href="/videos/" class="dropdown-item">Watch</a>
+            <a href="/app/" class="dropdown-item">App</a>     
+            <a href="/account/dashboard/" class="dropdown-item">Dashboard</a>
+            <a href="/about/contact/" class="dropdown-item">Contact Us</a>
+             <a class="dropdown-item" onclick="halfmoon.toggleDarkMode()">Toggle Dark Mode</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+        <div class="content-wrapper"> <!-- Begin -->
+        <center>
