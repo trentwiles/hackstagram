@@ -11,6 +11,10 @@ $router->get('/', function() {
     Phug::displayFile('views/index.pug');
 });
 
+$router->get('/about', function() {
+    Phug::displayFile('views/index.pug');
+});
+
 $router->get('/@/(/[a-z0-9_-]+)', function($user) {
     if(! $user)
     {
