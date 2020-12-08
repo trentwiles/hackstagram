@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require '/i.config.php';
+require 'i.config.php';
 
 $router = new \Bramus\Router\Router();
 $pug = new Pug();
