@@ -20,8 +20,7 @@ $router->get('/@(\w+)', function($user) {
     {
         die(header("Location: /"));
     }
-    $base = json_decode(file_get_contents("https://instagram.com/${user}?__a=1"), true);
-    die($base);
+    $base = file_get_contents("https://instagram.com/${user}?__a=1");
     $username = htmlspecialchars($user);
     $bio = htmlspecialchars($base["graphql"]["user"]["biography"]);
     $trimmed = trim($bio["graphql"]["user"]["profile_pic_url_hd"], "https://scontent-bos3-1.cdninstagram.com");
