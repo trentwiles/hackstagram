@@ -11,7 +11,7 @@ $router->get('/', function() {
     Phug::displayFile('views/index.pug');
 });
 
-$router->get('/u/(/[a-z0-9_-]+)', function($user) {
+$router->get('/@(/[a-z0-9_-]+)', function($user) {
     if(! $user)
     {
         die(header("Location: /"));
