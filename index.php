@@ -13,7 +13,7 @@ function raw($url)
   
   curl_setopt($handle, CURLOPT_URL, $url);
   curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt( $ch, CURLOPT_USERAGENT, "hackstagram" );
+  curl_setopt( $handle, CURLOPT_USERAGENT, "hackstagram" );
   $output = curl_exec($handle);
   
   curl_close($handle);
@@ -34,7 +34,7 @@ $router->get('/@(\w+)', function($user) {
     {
         die(header("Location: /"));
     }
-    $base1 = raw("https://instagram.com/${user}?__a=1");
+    $base1 = raw("https://www.instagram.com/${raw}/?__a=1");
     $base = json_decode($base1, true);
     $username = htmlspecialchars($user);
     $bio = htmlspecialchars($base["graphql"]["user"]["biography"]);
