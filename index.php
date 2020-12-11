@@ -34,7 +34,7 @@ $router->get('/@(\w+)', function($user) {
     {
         die(header("Location: /"));
     }
-    $base1 = raw("https://www.instagram.com/${raw}/?__a=1");
+    $base1 = raw("https://www.instagram.com/${user}/?__a=1");
     $base = json_decode($base1, true);
     $username = htmlspecialchars($user);
     $bio = htmlspecialchars($base["graphql"]["user"]["biography"]);
